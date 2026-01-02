@@ -1,6 +1,6 @@
 # Fruit vs Sugar
 
-**Fruits vs Sugar* is a 3D Voxel Tower Defense game inspired by the mechanics of *Plants vs. Zombies*, but built with a vibrant twist. Developed in **Godot**, this project pits healthy organic Defenders against an army of sugary, crystalline Enemies in a battle for nutritional dominance.
+**Fruits vs Sugar** is a 3D Voxel Tower Defense game inspired by the mechanics of *Plants vs. Zombies*, but built with a vibrant twist. Developed in **Godot**, this project pits healthy organic Defenders against an army of sugary, crystalline Enemies in a battle for nutritional dominance.
 
 ## 🎮 The Concept
 The "Sugar Rush" has begun! An army of processed sweets—Sugar Cubes, Soda Cans, and Gummy Worms—are marching toward the picnic basket. You must place tactical fruit units on the grid to stop them.

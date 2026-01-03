@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpgj6b6mhh3qf"]
+
+[ext_resource type="ArrayMesh" uid="uid://bo4mwwc7a8wnv" path="res://models/blueberry.vox" id="1_76nsk"]
+[ext_resource type="Script" uid="uid://dswth23p7j5t2" path="res://scenes/ShooterPlant.gd" id="1_jsrrq"]
+[ext_resource type="PackedScene" uid="uid://ccl81piacois1" path="res://scenes/ColisionShape3D.tscn" id="2_kmcpm"]
+[ext_resource type="PackedScene" uid="uid://c53t6nyeccnxq" path="res://scenes/Projectile.tscn" id="2_n75yc"]
+
+[node name="Blueberry" type="Area3D" groups=["fruits"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_jsrrq")
+projectile_scene = ExtResource("2_n75yc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." groups=["fruits"]]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_76nsk")
+
+[node name="CollisionShape3D" parent="." instance=ExtResource("2_kmcpm")]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+target_position = Vector3(20, 0.25, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="FireRate" type="Timer" parent="."]
+wait_time = 1.5

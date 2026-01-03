@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c53t6nyeccnxq"]
+
+[ext_resource type="Script" uid="uid://daw0mo5gsqt8v" path="res://Projectile.gd" id="1_dprbf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vihyi"]
+albedo_color = Color(0.15177742, 2.9070974e-05, 0.577175, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kdm4f"]
+radius = 0.15
+
+[node name="Projectile" type="Area3D"]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_dprbf")
+speed = 2
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+radius = 0.15
+material = SubResource("StandardMaterial3D_vihyi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_kdm4f")
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true

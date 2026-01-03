@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://du3waehddegnh"]
+
+[ext_resource type="ArrayMesh" uid="uid://f6ra7bhwdyff" path="res://models/sugar_cube.vox" id="1_821eg"]
+[ext_resource type="Script" uid="uid://bn636aw603qen" path="res://scenes/SugarEnemy.gd" id="1_cmv5o"]
+[ext_resource type="PackedScene" uid="uid://ccl81piacois1" path="res://scenes/ColisionShape3D.tscn" id="2_jxvtb"]
+
+[node name="SugarEnemy" type="Area3D" groups=["enemy"]]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_cmv5o")
+speed = 0.25
+damage = 25
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_821eg")
+
+[node name="CollisionShape3D" parent="." instance=ExtResource("2_jxvtb")]
+
+[node name="AttackTimer" type="Timer" parent="."]

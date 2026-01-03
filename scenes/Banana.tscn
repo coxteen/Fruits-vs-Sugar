@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://p7e60cnb2u1e"]
+
+[ext_resource type="Script" uid="uid://dx2knxxyx70uv" path="res://scenes/Banana.gd" id="1_5gnsg"]
+[ext_resource type="ArrayMesh" uid="uid://vcoajm5lod7b" path="res://models/banana.vox" id="1_jdwfm"]
+[ext_resource type="PackedScene" uid="uid://cu4nlw0283rnp" path="res://scenes/WaterDrop.tscn" id="2_osjnt"]
+[ext_resource type="PackedScene" uid="uid://ccl81piacois1" path="res://scenes/ColisionShape3D.tscn" id="4_075dy"]
+
+[node name="Banana" type="Area3D" groups=["fruits"]]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_5gnsg")
+water_drop_scene = ExtResource("2_osjnt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_jdwfm")
+
+[node name="CollisionShape3D" parent="." instance=ExtResource("4_075dy")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true

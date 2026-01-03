@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0ujut3yfwhdh"]
+
+[ext_resource type="ArrayMesh" uid="uid://bsej34p1m6ygd" path="res://models/grass_tile.vox" id="1_6q644"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6q644"]
+points = PackedVector3Array(0.50793654, 0.023809524, 0.50793654, -0.50793654, -0.007933402, -0.50793654, -0.50793654, 0.023809524, -0.50793654, 0.50793654, -0.007933402, -0.50793654, -0.50793654, -0.007933402, 0.50793654, -0.50793654, 0.023809524, 0.50793654, 0.50793654, 0.023809524, -0.50793654, 0.50793654, -0.007933402, 0.50793654)
+
+[node name="GrassTile" type="Node3D"]
+
+[node name="Grass" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_6q644")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grass"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grass/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_6q644")
